@@ -1,0 +1,47 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:company.employee,sale_parties:"
+msgid "Sale Parties"
+msgstr "Vendedor de"
+
+msgctxt "field:party.party,salesmans:"
+msgid "Salesmans"
+msgstr "Vendedores"
+
+msgctxt "field:party.party-company.employee,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:party.party-company.employee,create_uid:"
+msgid "Create User"
+msgstr "Usuario de creación"
+
+msgctxt "field:party.party-company.employee,employee:"
+msgid "Salesman"
+msgstr "Vendedor"
+
+msgctxt "field:party.party-company.employee,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:party.party-company.employee,party:"
+msgid "Party"
+msgstr "Tercero"
+
+msgctxt "field:party.party-company.employee,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:party.party-company.employee,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:party.party-company.employee,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "model:party.party-company.employee,name:"
+msgid "Party - Employee"
+msgstr "Terceros Empleados"
