@@ -36,10 +36,9 @@ class Sale:
 
     @fields.depends('party')
     def on_change_party(self):
-        res = super(Sale, self).on_change_party()
+        super(Sale, self).on_change_party()
         if self.party:
             if len(self.party.salesmans) == 1:
-                res['employee'] = self.party.salesmans[0].id
+                self.employee = self.party.salesmans[0]
             else:
-                res['employee'] = None
-        return res
+                self.employee = None
