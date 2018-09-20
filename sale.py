@@ -5,7 +5,6 @@ from trytond.model import ModelSQL, fields
 from trytond.pool import PoolMeta
 
 __all__ = ['PartyEmployee', 'Party', 'Employee', 'Sale']
-__metaclass__ = PoolMeta
 
 
 class PartyEmployee(ModelSQL):
@@ -17,21 +16,21 @@ class PartyEmployee(ModelSQL):
         select=True, ondelete='CASCADE')
 
 
-class Party:
+class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
 
     salesmans = fields.Many2Many('party.party-company.employee', 'party',
         'employee', 'Salesmans')
 
 
-class Employee:
+class Employee(metaclass=PoolMeta):
     __name__ = 'company.employee'
 
     sale_parties = fields.Many2Many('party.party-company.employee', 'employee',
         'party', 'Sale Parties')
 
 
-class Sale:
+class Sale(metaclass=PoolMeta):
     __name__ = 'sale.sale'
 
     @fields.depends('party')
