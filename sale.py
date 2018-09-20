@@ -35,7 +35,6 @@ class Sale:
     __name__ = 'sale.sale'
     __metaclass__ = PoolMeta
 
-    @fields.depends('party')
     def on_change_party(self):
         super(Sale, self).on_change_party()
         if self.party:
