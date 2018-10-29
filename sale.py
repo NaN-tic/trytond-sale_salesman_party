@@ -35,6 +35,13 @@ class Sale:
     __name__ = 'sale.sale'
     __metaclass__ = PoolMeta
 
+    @classmethod
+    def __setup__(cls):
+        super(Sale, cls).__setup__()
+        if 'party' not in cls.party.on_change:
+            cls.party.on_change.add('party')
+
+    @fields.depends('party')
     def on_change_party(self):
         super(Sale, self).on_change_party()
         if self.party:
