@@ -3,6 +3,7 @@
 # the full copyright notices and license terms.
 from trytond.model import ModelSQL, fields
 from trytond.pool import PoolMeta
+from trytond.pyson import Eval
 
 __all__ = ['PartyEmployee', 'Party', 'Employee', 'Sale']
 
@@ -27,7 +28,11 @@ class Employee(metaclass=PoolMeta):
     __name__ = 'company.employee'
 
     sale_parties = fields.Many2Many('party.party-company.employee', 'employee',
-        'party', 'Sale Parties')
+        'party', 'Sale Parties',
+        context={
+            'company': Eval('company'),
+            },
+        depends=['company'])
 
 
 class Sale(metaclass=PoolMeta):
