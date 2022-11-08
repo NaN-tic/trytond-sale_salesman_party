@@ -12,9 +12,9 @@ class PartyEmployee(ModelSQL):
     'Party - Employee'
     __name__ = 'party.party-company.employee'
     party = fields.Many2One('party.party', 'Party', required=True,
-        select=True, ondelete='CASCADE')
+        ondelete='CASCADE')
     employee = fields.Many2One('company.employee', 'Salesman', required=True,
-        select=True, ondelete='CASCADE')
+        ondelete='CASCADE')
 
 
 class Party(metaclass=PoolMeta):
